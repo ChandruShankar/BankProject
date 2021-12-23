@@ -89,7 +89,7 @@ export class BarChatComponent implements OnInit {
 
 }
 
-export const StatsBarChart: BarData[] = [
+const StatsBarChart: BarData[] = [
   {label: 'Debit', amount: 0},
   {label: 'Debit', amount: 100000},
   {label: 'Debit', amount: 100000}
