@@ -42,7 +42,7 @@ export class AppComponent {
     .subscribe((response)=>{ 
       this.isLoading = false;
       this.responseData = new BankData(response.Balance, response.Credit, response.Debit)
-      console.log(response.Balance, response.Credit, response.Debit)
+      console.log(response)
      });
   }
 
