@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { BarChatComponent } from './bar-chat/bar-chat.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarChatComponent
+    BarChatComponent,
+    LoginComponent,
+    UploadFileComponent
   ],
   imports: [
     BrowserModule,

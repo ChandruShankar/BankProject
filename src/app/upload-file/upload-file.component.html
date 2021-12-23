@@ -1,0 +1,25 @@
+<div class="container">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;  
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="container">    
+  
+           <!-- <img src="assets/bank1.jpg" class="bg">  -->
+           <form  #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" >
+            <!-- <label for="Name" style="color:white">Account Holder Name</label><br>
+            <input type="text" id="u_name" name="name" minlength="4" maxlength="20"placeholder="Enter UserName" > -->
+             <h1 style="color: whitesmoke;">Bank Statement</h1>   
+             <!-- <input type="text" (change)="getName(name.value)" #name /><br/> -->
+             <input type="file"  (change)="getfile($event)" style="background-color: rgb(95, 158, 160);"/><br/>
+             <!-- <input type="button" value="Upload file" class="btn" style="background-color: cadetblue;"  /> -->
+             <label for="Name" style="color:white">Bank Branch</label><br>
+             <input type="text" id="u_name" name="name" minlength="4" maxlength="20"placeholder="Enter Branch Name" >
+             <input type="submit"  class="btn" style="background-color: rgb(95, 160, 117);"  value="submit">
+        </form>
+      </div>
+    </div>
+  
+<p *ngIf="isLoading">Loading ... {{ isLoading }}</p>
+<p *ngIf="!isLoading" >{{ responseData }}</p>
