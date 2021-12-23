@@ -8,8 +8,23 @@ body{
      background-size: cover;
 } 
     
+h1{
+    font-size: 20px;
+    color: white;
+    align-content: center;
+}
+.bg{
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-width: 100%;
+   min-height: 100%;
+   position: absolute;
+   left: -100%;
+   right: -100%;
+   margin: auto;
+  
+}
      
-
 .center {
     display: block;
     margin-left: auto;
