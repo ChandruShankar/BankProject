@@ -5,3 +5,4 @@ export class BankData{
             debit: number = 0
         ){}
 }
+
