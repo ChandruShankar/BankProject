@@ -4,9 +4,8 @@ import { NgForm } from '@angular/forms';
 import { BankData } from '../bar-chat/data.model';
 
 export interface ResponseData {
-  Balance: number,
-  Credit: number,
-  Debit: number
+  label: string;
+  amount: number;
 }
 
 @Component({
@@ -21,7 +20,8 @@ export class UploadFileComponent implements OnInit {
   name: string = '';
   file: any;
   isLoading: Boolean = false;
-  @Input() responseData: BankData = new BankData()
+  responseData: BankData = new BankData()
+  chartData: any
  
 
   constructor(private http:HttpClient){}
@@ -43,8 +43,7 @@ export class UploadFileComponent implements OnInit {
     return this.http.post<ResponseData>('http://localhost:5000/file-upload', formData)
     .subscribe((response)=>{ 
       this.isLoading = false;
-      this.responseData = new BankData(response.Balance, response.Credit, response.Debit)
-      console.log(response)
+      this.chartData = response
      });
   }
 

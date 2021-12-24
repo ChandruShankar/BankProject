@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 import * as d3 from 'd3-selection';
 import * as d3Scale from 'd3-scale';
 import * as d3Array from 'd3-array';
 import * as d3Axis from 'd3-axis';
+import * as d3j from 'd3';
 import { BankData } from './data.model';
 
+
 @Component({
-  selector: 'app-bar-chat',
+  selector: 'app-bar-chart',
   templateUrl: './bar-chat.component.html',
   styleUrls: ['./bar-chat.component.css']
 })
 
 export class BarChatComponent implements OnInit {
-  bankData: BankData = new BankData(0,0,0);
+  @Input() bankData: any
   currentRate = 8;
-  title = 'D3 Barchart with Angular 10';
+  title = 'Whole picture';
   width: number;
   height: number;
   margin = { top: 20, right: 20, bottom: 30, left: 40 };
@@ -25,16 +27,26 @@ export class BarChatComponent implements OnInit {
   svg: any;
   g: any;
 
+
   constructor() {
     this.width = 900 - this.margin.left - this.margin.right;
     this.height = 500 - this.margin.top - this.margin.bottom;
   }
 
   ngOnInit() {
-    this.initSvg();
-    this.initAxis();
-    this.drawAxis();
-    this.drawBars();
+
+    // d3j.json(this.bankData).then((data: any) => {
+    //   this.initSvg();
+    //   this.initAxis(data);
+    //   this.drawAxis();
+    //   this.drawBars(data);
+      
+    // });
+    
+      this.initSvg();
+      this.initAxis(this.bankData);
+      this.drawAxis();
+      this.drawBars(this.bankData);
   }
 
   initSvg() {
@@ -47,16 +59,16 @@ export class BarChatComponent implements OnInit {
       .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
   }
 
-  initAxis() {
+  initAxis(data: any) {
     this.x = d3Scale.scaleBand().rangeRound([0, this.width]).padding(0.1);
     this.y = d3Scale.scaleLinear().rangeRound([this.height, 0]);
-    this.x.domain(StatsBarChart.map((d:any) => d.company) );
-    this.y.domain([0, d3Array.max(StatsBarChart, (d) => d.amount)]);
+    this.x.domain(data.map((d:any) => d.label) );
+    this.y.domain([0, d3Array.max(data, (d:any) => d.amount)]);
     
   }
   
   drawAxis() {
-    console.log( this.y);
+ 
     this.g.append('g')
       .attr('class', 'axis axis--x')
       .attr('transform', 'translate(0,' + this.height + ')')
@@ -73,26 +85,27 @@ export class BarChatComponent implements OnInit {
       .text('amount');
   }
 
-  drawBars() {
+  drawBars(data: any) {
 
- 
+ console.log(data)
+
     this.g.selectAll('.bar')
-      .data(StatsBarChart)
+      .data(data)
       .enter().append('rect')
       .attr('class', 'bar')
-      .attr('x', (d:  any) => this.x(d.company))
-      .attr('y', (d:  any) => this.y(d.frequency))
+      .attr('x', (d:  any) => this.x(d.label))
+      .attr('y', (d:  any) => this.y(d.amount))
       .attr('width', this.x.bandwidth())
       .attr('fill', '#498bfc')
-     // .attr('height', (d:  any) => this.height - this.y(d.frequency));
+      .attr('height', (d:  any) => this.height - this.y(d.amount));
   }
 
 }
 
-export const StatsBarChart: BarData[] = [
-  {label: 'Debit', amount: 0},
+export let StatsBarChart1: BarData[] = [
+  {label: 'Balance', amount: 0},
   {label: 'Debit', amount: 100000},
-  {label: 'Debit', amount: 100000}
+  {label: 'Credit', amount: 100000}
 ];
 
 export interface BarData {

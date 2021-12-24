@@ -22,4 +22,5 @@
     </div>
   
 <p *ngIf="isLoading">Loading ... {{ isLoading }}</p>
-<p *ngIf="!isLoading" >{{ responseData }}</p>
+
+<app-bar-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-bar-chart>
