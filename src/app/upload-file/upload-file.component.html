@@ -24,3 +24,4 @@
 <p *ngIf="isLoading">Loading ... {{ isLoading }}</p>
 
 <app-bar-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-bar-chart>
+<app-pie-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-pie-chart>

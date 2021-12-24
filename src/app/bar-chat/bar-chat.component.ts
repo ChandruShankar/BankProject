@@ -42,7 +42,6 @@ export class BarChatComponent implements OnInit {
     //   this.drawBars(data);
       
     // });
-    
       this.initSvg();
       this.initAxis(this.bankData);
       this.drawAxis();
@@ -88,7 +87,7 @@ export class BarChatComponent implements OnInit {
   drawBars(data: any) {
 
  console.log(data)
-
+ 
     this.g.selectAll('.bar')
       .data(data)
       .enter().append('rect')
