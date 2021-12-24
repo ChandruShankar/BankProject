@@ -8,13 +8,15 @@ import { BarChatComponent } from './bar-chat/bar-chat.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarChatComponent,
     LoginComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
