@@ -4,7 +4,7 @@
     font-size: 14px;
 }
 body{
-     background-color:#363945; 
+      
      background-size: cover;
 } 
     
@@ -14,14 +14,14 @@ h1{
     align-content: center;
 }
 .bg{
-   background-size: cover;
-   background-repeat: no-repeat;
-   min-width: 100%;
-   min-height: 100%;
-   position: absolute;
-   left: -100%;
-   right: -100%;
-   margin: auto;
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-left: 55%;
+     width:490px;
+     height: 440px;
+    position:absolute;
+    margin-top: -1%;
   
 }
      
@@ -36,14 +36,12 @@ form {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     position:relative;
     z-index: 1;
-    align-content: left;
-    max-width: 420px;
-    max-height: 460px;
-    margin: 100 auto 100px;
-/*        text-align: center;
-*/        padding: 45px;
-    background:#034f84;
-    margin: 0 auto 100px;
+    max-width: 360px;
+    padding: 45px;
+    max-width: 360px;
+    background:#F8F8FF;
+    margin-left:60px;   
+    margin-top: 70px;
 }
 form input {
     font-family: "Roboto", sans-serif;
