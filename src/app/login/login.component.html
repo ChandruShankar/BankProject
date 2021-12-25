@@ -1,9 +1,8 @@
-<div>
-   
-
-    <form  #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" >
-        <h1 style="color: whitesmoke;">Login</h1>
-        <label for="Name" style="color:white">Username</label><br><br>
+<div> 
+    <img class="bg" src="assets/Login.jpg">
+       <form  #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" >
+        <h1 style="color: black;">Login</h1>
+        <label for="Name" style="color:black">Username</label><br><br>
         <input type="text" 
             minlength="4" 
             maxlength="20"
@@ -15,7 +14,7 @@
             ><br>
         <!-- <div class="error" *ngIf="username.errors?.minlength">Username should be atleast 4 characters.</div>
         <div class="error"  *ngIf="username.touched && username.invalid">Username is required.</div> -->
-        <label for="Password"style="color:white">Password</label><br><br>
+        <label for="Password"style="color:black">Password</label><br><br>
         <input type="password"
             placeholder="Enter Password" 
             ngModel 
@@ -25,7 +24,7 @@
 
         <!-- <div class="error" *ngIf="password.errors?.minlength">Password should be atleast 4 characters.</div> -->
         <!-- <div class="error"  *ngIf="password.touched && password.invalid">Password is required.</div> -->
-       <input type="submit"    class="btn" style="background-color: green;"  value="Login" [disabled]="!authForm.valid"><br>
+       <input type="submit"    class="btn" style="background-color:green;"  value="Login" [disabled]="!authForm.valid"><br>
        <!-- <input type="submit"  (click)=""class="btn" style="background-color:#c83349;"  value="Register"> -->
 
     </form>
