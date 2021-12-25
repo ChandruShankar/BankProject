@@ -1,0 +1,27 @@
+.toolbar {
+    position:absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    /* background-color: #1976d2; */
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 100px;
+  }
+  .bg{
+    background-size: auto;
+        background-repeat: no-repeat;
+        min-width: 100%;
+        margin-top: -70px;
+        position: absolute;
+        left: -100%;
+        right: -100%;
+        margin: auto;
+        top: 8%;
+    }
