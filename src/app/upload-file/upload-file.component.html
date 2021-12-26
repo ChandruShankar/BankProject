@@ -22,5 +22,12 @@
     </div>
   
 <p *ngIf="isLoading">Loading ... {{ isLoading }}</p>
+<div class="row">
 
+<div class="card">
+<app-pie-chart-trans *ngIf="!isLoading && chartData" [bankData]="chartData"></app-pie-chart-trans>
+</div>
+<div class="card">
 <app-bar-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-bar-chart>
+</div>
+</div>

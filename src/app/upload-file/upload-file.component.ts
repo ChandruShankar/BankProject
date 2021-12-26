@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { BankData } from '../bar-chat/data.model';
+
 
 export interface ResponseData {
   label: string;
@@ -20,7 +20,7 @@ export class UploadFileComponent implements OnInit {
   name: string = '';
   file: any;
   isLoading: Boolean = false;
-  responseData: BankData = new BankData()
+
   chartData: any
  
 

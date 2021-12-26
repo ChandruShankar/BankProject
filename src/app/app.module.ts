@@ -4,17 +4,21 @@ import { HttpClientModule }   from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
-import { BarChatComponent } from './bar-chat/bar-chat.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { BarChartVerticalComponent } from './bar-chart-vertical/bar-chart-vertical.component';
+import { PieChartTransComponent } from './pie-chart-trans/pie-chart-trans.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarChatComponent,
+    BarChartComponent,
     LoginComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    BarChartVerticalComponent,
+    PieChartTransComponent
   ],
   imports: [
     BrowserModule,
