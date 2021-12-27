@@ -15,15 +15,15 @@ export interface ResponseData {
 })
 export class UploadFileComponent implements OnInit {
 
- 
- 
   name: string = '';
   file: any;
   isLoading: Boolean = false;
-  responseData: BankData = new BankData()
-  chartData: any
- 
-
+  chartData: ResponseData[] = new Array()
+  pieChartData: ResponseData[] = new Array()
+  spentCredit: ResponseData[] = new Array()
+  spentDebit: ResponseData[] = new Array()
+  response: any
+  
   constructor(private http:HttpClient){}
   ngOnInit(): void {
   }
@@ -40,10 +40,11 @@ export class UploadFileComponent implements OnInit {
     formData.set('file', this.file);
 
     //submit this data in API
-    return this.http.post<ResponseData>('http://localhost:5000/file-upload', formData).subscribe((response)=>{ 
+    return this.http.post('http://localhost:5000/file-upload', formData).subscribe((response)=>{ 
 
       this.isLoading = false;
-      this.chartData = response
+      this.response = response     
+      this.onParse(response)
      },error=>
      {
        this.errmsg="Please Select File"
@@ -51,4 +52,24 @@ export class UploadFileComponent implements OnInit {
   }
 
 
+  
+  onParse(data: any){
+   
+    this.chartData = data[2].total.map((a: ResponseData) => new chartData(a.amount, a.label))
+    this.pieChartData = data[2].total.map((a: ResponseData) => new chartData(a.amount, a.label))
+    this.pieChartData.pop()
+    this.spentDebit = data[1].month_debit.map((a: ResponseData) => new chartData(a.amount, a.label))
+    this.spentCredit = data[0].month_credit.map((a: ResponseData) => new chartData(a.amount, a.label))
+  }
+
+
+}
+
+export class chartData {
+  amount: number;
+  label: string;
+  constructor(amount: number = 0, label: string = ''){
+    this.amount = amount;
+    this.label = label;
+  }
 }
