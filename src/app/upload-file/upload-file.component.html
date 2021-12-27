@@ -13,6 +13,7 @@
              <h1 style="color: black">Bank Statement</h1>   
              <!-- <input type="text" (change)="getName(name.value)" #name /><br/> -->
              <input type="file"  (change)="getfile($event)" style="background-color: lightgrey;"/><br/>
+             <h1><p *ngIf="errmsg" class="error">{{errmsg}}</p></h1>
              <!-- <input type="button" value="Upload file" class="btn" style="background-color: cadetblue;"  /> -->
              <label for="Name" style="color:black">Bank Branch</label><br>
              <input type="text" id="u_name" name="name" minlength="4" maxlength="20"placeholder="Enter Branch Name" >
@@ -21,7 +22,7 @@
       </div>
     </div>
   
-<p *ngIf="isLoading">Loading ... {{ isLoading }}</p>
+<!-- <h1><p *ngIf="isLoading" class="error">Please Select file.. {{isLoading}}</p></h1> -->
 
 <app-bar-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-bar-chart>
 <app-pie-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-pie-chart>
