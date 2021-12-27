@@ -32,7 +32,7 @@ export class UploadFileComponent implements OnInit {
     this.file=event.target.files[0];
     console.log('file', this.file);
   }
-
+ errmsg=''
   onSubmit(form: NgForm){
     this.isLoading = true;
     let formData = new FormData();
@@ -40,10 +40,13 @@ export class UploadFileComponent implements OnInit {
     formData.set('file', this.file);
 
     //submit this data in API
-    return this.http.post<ResponseData>('http://localhost:5000/file-upload', formData)
-    .subscribe((response)=>{ 
+    return this.http.post<ResponseData>('http://localhost:5000/file-upload', formData).subscribe((response)=>{ 
+
       this.isLoading = false;
       this.chartData = response
+     },error=>
+     {
+       this.errmsg="Please Select File"
      });
   }
 
