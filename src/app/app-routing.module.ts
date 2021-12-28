@@ -5,8 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
-  { path: '', redirectTo: '/upload-file', pathMatch: 'full' },
   { path: 'upload-file', component: UploadFileComponent},
 ];
 
