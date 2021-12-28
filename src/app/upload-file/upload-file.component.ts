@@ -22,6 +22,7 @@ export class UploadFileComponent implements OnInit {
   pieChartData: ResponseData[] = new Array()
   spentCredit: ResponseData[] = new Array()
   spentDebit: ResponseData[] = new Array()
+  total: ResponseData[] = new Array()
   response: any
   
   constructor(private http:HttpClient){}
@@ -57,9 +58,9 @@ export class UploadFileComponent implements OnInit {
    
     this.chartData = data[2].total.map((a: ResponseData) => new chartData(a.amount, a.label))
     this.pieChartData = data[2].total.map((a: ResponseData) => new chartData(a.amount, a.label))
-    this.pieChartData.pop()
     this.spentDebit = data[1].month_debit.map((a: ResponseData) => new chartData(a.amount, a.label))
     this.spentCredit = data[0].month_credit.map((a: ResponseData) => new chartData(a.amount, a.label))
+    this.total = data[3].nototal.map((a: ResponseData) => new chartData(a.amount, a.label))
   }
 
 
@@ -72,4 +73,6 @@ export class chartData {
     this.amount = amount;
     this.label = label;
   }
+
 }
+

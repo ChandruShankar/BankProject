@@ -15,7 +15,7 @@ export class PieChartComponent implements OnInit {
   //     ];
    svg: any;
    margin = 50;
-   width = 550;
+   width = 380;
    height = 400;
    radius = Math.min(this.width, this.height) / 2 - this.margin;
    colors:any;
@@ -63,7 +63,7 @@ export class PieChartComponent implements OnInit {
     .style("stroke-width", "1px");
   
     const labelLocation = d3.arc()
-    .innerRadius(45)
+    .innerRadius(25)
     .outerRadius(this.radius);
   
     this.svg

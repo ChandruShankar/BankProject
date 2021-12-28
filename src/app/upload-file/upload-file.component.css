@@ -68,3 +68,24 @@ form input {
     transition: all 0.3 ease;
     cursor: pointer;
 }
+.grid{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    position:relative;
+    z-index: 1;
+    width: 93%;
+    background-size:100px;
+    background:#498bfc;
+    text-align: center;
+    margin-left:60px;  
+    margin-right:70px;   
+    margin-top: 200px;
+}
+.grid1{
+    position:relative;
+    z-index: 1;
+    width: 73.5%;
+    text-align: left;
+    margin-left:50px;  
+    margin-right:20px;   
+    margin-top: 20px;
+}

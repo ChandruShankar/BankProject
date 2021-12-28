@@ -10,13 +10,15 @@ import { LoginComponent } from './login/login.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     BarChatComponent,
     LoginComponent,
     UploadFileComponent,
-    PieChartComponent
+    PieChartComponent,
+
   ],
   imports: [
     BrowserModule,
