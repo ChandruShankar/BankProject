@@ -17,11 +17,11 @@ h1{
     background-size: auto;
     background-repeat: no-repeat;
     margin: auto;
-    margin-left: 55%;
+    margin-left: 50%;
      width:490px;
      height: 440px;
     position:absolute;
-    margin-top: -1%;
+    margin-top: 5%;
   
 }
      
@@ -40,8 +40,8 @@ form {
     padding: 45px;
     max-width: 360px;
     background:#F8F8FF;
-    margin-left:60px;   
-    margin-top: 70px;
+    margin-left:10%;   
+    margin-top: 8%;
 }
 form input {
     font-family: "Roboto", sans-serif;
@@ -88,4 +88,8 @@ form input {
     margin-left:50px;  
     margin-right:20px;   
     margin-top: 20px;
+}
+.div {
+    display: flex; 
+    flex-grow:grow;
 }

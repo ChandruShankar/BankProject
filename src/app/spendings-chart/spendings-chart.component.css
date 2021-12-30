@@ -1,0 +1,24 @@
+.d3-chart {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .d3-chart .axis path,
+  .d3-chart .axis line {
+    stroke: #999;
+  }
+  
+  .d3-chart .axis text {
+    fill: #999;
+  }
+  .grid{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    position:relative;
+    z-index: 1;
+    background-size:50px;
+    background:#F8F8FF;
+    text-align: center;
+    margin-left:60px;  
+    margin-right:60px;   
+    margin-top: 40px;
+}

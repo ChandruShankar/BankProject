@@ -24,31 +24,35 @@
   
 <h1><p *ngIf="isLoading" class="error">Please Select file.. {{isLoading}}</p></h1>
 
-<div class="grid" ><h1 style="color:whitesmoke;"><br> Analysis Report</h1>
-  <br>
-</div>  
-<!-- <div style="display: flex; flex-grow:grow;">   
-    <div style="margin-top: 30px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;  
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;&nbsp;
-    <img
-      width="150"
-      alt="Kanini Logo"
-      src="../assets/icon.png" routerLink="/"> </div>
-
-  <div class="grid1">
-    <h3 style="color:black;"> Number of Credit Transactions:</h3> 
+<div *ngIf="!isLoading">
+  <div class="grid"  ><h1 style="color:whitesmoke;"><br> Analysis Report</h1>
     <br>
-    <h3 style="color:black;"> Number of Debit Transactions: </h3> 
+  </div>  
+  <div style="display: flex; flex-grow:grow;">   
+      <div style="margin-top: 30px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;  
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
+      <img
+        width="150"
+        alt="Kanini Logo"
+        src="../assets/icon.png" routerLink="/"> </div>
+
+    <div class="grid1">
+      <h3 style="color:black;" > Number of Credit Transactions: {{noCredit}}</h3> 
+      <br>
+      <h3 style="color:black;"> Number of Debit Transactions: {{noDebit}}</h3> 
+    </div>
+    </div>
+
+
+  <div  style="display: flex; flex-grow:grow;" >
+  <app-bar-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-bar-chart>
+  <app-pie-chart *ngIf="!isLoading && pieChartData" [bankData]="pieChartData"></app-pie-chart>
+
+  <app-spendings-chart *ngIf="!isLoading && spentDebit" [bankData]="spentDebit"></app-spendings-chart>
+  <app-spendings-chart *ngIf="!isLoading && spentCredit" [bankData]="spentCredit"></app-spendings-chart>
   </div>
-  </div> -->
-
-
-<div style="display: flex; flex-grow:grow;">
-<app-bar-chart *ngIf="!isLoading && chartData" [bankData]="chartData"></app-bar-chart>
-<app-pie-chart *ngIf="!isLoading && pieChartData" [bankData]="pieChartData"></app-pie-chart>
 </div>
-

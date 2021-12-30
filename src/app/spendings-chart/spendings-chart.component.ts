@@ -6,18 +6,15 @@ import * as d3Scale from 'd3-scale';
 import * as d3Array from 'd3-array';
 import * as d3Axis from 'd3-axis';
 
-
-
 @Component({
-  selector: 'app-bar-chart',
-  templateUrl: './bar-chat.component.html',
-  styleUrls: ['./bar-chat.component.css']
+  selector: 'app-spendings-chart',
+  templateUrl: './spendings-chart.component.html',
+  styleUrls: ['./spendings-chart.component.css']
 })
-
-export class BarChatComponent implements OnInit {
+export class SpendingsChartComponent implements OnInit {
   @Input() bankData: any
   currentRate = 8;
-  title = 'Whole picture';
+  title = 'Spendings';
   width: number;
   height: number;
   margin = { top: 20, right: 20, bottom: 30, left: 40 };
@@ -33,14 +30,6 @@ export class BarChatComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    // d3j.json(this.bankData).then((data: any) => {
-    //   this.initSvg();
-    //   this.initAxis(data);
-    //   this.drawAxis();
-    //   this.drawBars(data);
-      
-    // });
       this.initSvg();
       this.initAxis(this.bankData);
       this.drawAxis();
@@ -99,8 +88,6 @@ export class BarChatComponent implements OnInit {
   }
 
 }
-
-
 
 export interface BarData {
   label: string;

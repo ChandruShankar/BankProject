@@ -22,9 +22,11 @@ export class UploadFileComponent implements OnInit {
   pieChartData: ResponseData[] = new Array()
   spentCredit: ResponseData[] = new Array()
   spentDebit: ResponseData[] = new Array()
-  total: ResponseData[] = new Array()
-  response: any
   
+  response: any
+  noCredit: number = 0
+  noDebit: number = 0
+
   constructor(private http:HttpClient){}
   ngOnInit(): void {
   }
@@ -58,9 +60,13 @@ export class UploadFileComponent implements OnInit {
    
     this.chartData = data[2].total.map((a: ResponseData) => new chartData(a.amount, a.label))
     this.pieChartData = data[2].total.map((a: ResponseData) => new chartData(a.amount, a.label))
+    this.pieChartData.pop()
     this.spentDebit = data[1].month_debit.map((a: ResponseData) => new chartData(a.amount, a.label))
     this.spentCredit = data[0].month_credit.map((a: ResponseData) => new chartData(a.amount, a.label))
-    this.total = data[3].nototal.map((a: ResponseData) => new chartData(a.amount, a.label))
+   
+    this.noCredit = data[3].noTotal[0].amount
+    this.noDebit = data[3].noTotal[1].amount
+
   }
 
 

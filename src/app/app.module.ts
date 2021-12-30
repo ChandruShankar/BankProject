@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { SpendingsChartComponent } from './spendings-chart/spendings-chart.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     LoginComponent,
     UploadFileComponent,
     PieChartComponent,
+    SpendingsChartComponent,
 
   ],
   imports: [
