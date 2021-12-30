@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   isLoading = false;
-  email = "qaqaqa"
+  email = "chandru@gmail.com"
   password = "qaqaqa"
 
 
